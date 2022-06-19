@@ -4,7 +4,7 @@ export class Question {
   }
 
   static create(question) {
-    return fetch("https://auth--app-1-default-rtdb.europe-west1.firebasedatabase.app/questions.json", {
+    return fetch("[YOURLINKTODB]", {
       method: "POST",
       body: JSON.stringify(question),
       headers: {
@@ -24,7 +24,7 @@ export class Question {
     if (!token) {
       return Promise.resolve(`<p class="error">You have no token</p>`)
     }
-    return fetch(`https://auth--app-1-default-rtdb.europe-west1.firebasedatabase.app/questions.json?auth=${token}`)
+    return fetch(`[YOURLINKTODB]?auth=${token}`)
       .then(response => response.json())
       .then(response => {
         if (response && response.error) {
